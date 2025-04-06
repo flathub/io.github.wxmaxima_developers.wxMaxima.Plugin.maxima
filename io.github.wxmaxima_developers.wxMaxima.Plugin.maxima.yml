@@ -71,7 +71,7 @@ modules:
       - --enable-sbcl
     post-install:
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
-      - ln -s /app/plugins/maxima/share/info /app/plugins/maxima/
+      - ln -s -r /app/plugins/maxima/share/info /app/plugins/maxima/
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/maxima/Maxima-source/5.47.0-source/maxima-5.47.0.tar.gz
