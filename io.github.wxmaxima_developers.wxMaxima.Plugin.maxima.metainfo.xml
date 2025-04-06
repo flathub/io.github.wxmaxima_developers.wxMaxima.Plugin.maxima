@@ -3,7 +3,7 @@
   <id>io.github.wxmaxima_developers.wxMaxima.Plugin.maxima</id>
   <extends>io.github.wxmaxima_developers.wxMaxima</extends>
   <name>Maxima</name>
-  <summary>Contains Maxima</summary>
+  <summary>Adds Maxima. Plugin name: io.github.wxmaxima_developers.wxMaxima.Plugin.maxima</summary>
   <project_license>GPL-2.0-or-later</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <update_contact>sixpalax_AT_gmail.com</update_contact>
