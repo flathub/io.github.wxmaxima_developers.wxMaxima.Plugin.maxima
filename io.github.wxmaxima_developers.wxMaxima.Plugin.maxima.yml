@@ -20,7 +20,7 @@ modules:
     buildsystem: autotools
     subdir: unix
     post-install:
-      - chmod 755 /app/plugins/maxima/lib/libtcl*.so
+      - chmod 755 /app/plugins/maxima/lib/libtcl9.0.so
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/tcl/tcl9.0.2-src.tar.gz
@@ -29,8 +29,8 @@ modules:
     buildsystem: autotools
     subdir: unix
     post-install:
-      # - ln -s -r /app/plugins/maxima/bin/wish8.6 /app/plugins/maxima/bin/wish
-      - chmod 755 /app/plugins/maxima/lib/libtk*.so
+      - ln -s -r /app/plugins/maxima/bin/wish9.0 /app/plugins/maxima/bin/wish
+      - chmod 755 /app/plugins/maxima/lib/libtcl9tk9.0.so
     sources:
       - type: archive
         url: https://prdownloads.sourceforge.net/tcl/tk9.0.2-src.tar.gz
@@ -65,16 +65,17 @@ modules:
           - aarch64
   - name: maxima
     buildsystem: autotools
-    no-autogen: true
+    no-autogen: false
     config-opts:
       - --enable-sbcl
     post-install:
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml
       - ln -s -r /app/plugins/maxima/share/info /app/plugins/maxima/
     sources:
-      - type: archive
-        url: https://prdownloads.sourceforge.net/maxima/Maxima-source/5.47.0-source/maxima-5.47.0.tar.gz
-        sha256: 9104021b24fd53e8c03a983509cb42e937a925e8c0c85c335d7709a14fd40f7a
+      - type: git
+        # url: https://prdownloads.sourceforge.net/maxima/Maxima-source/5.47.0-source/maxima-5.47.0.tar.gz
+        url: https://git.code.sf.net/p/maxima/code
+        commit: fbaf77047459fdef606dee8207aefc8b6c380310
       - type: file
         path: io.github.wxmaxima_developers.wxMaxima.Plugin.maxima.metainfo.xml
         
