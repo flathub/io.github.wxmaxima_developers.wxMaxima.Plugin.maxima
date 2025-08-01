@@ -9,6 +9,7 @@
   <update_contact>sixpalax_AT_gmail.com</update_contact>
   <url type="homepage">https://maxima.sourceforge.io/</url>
   <releases>
+    <release version="5.48.0" date="2025-07-29"/>
     <release version="5.47.0" date="2023-05-31"/>
   </releases>
 </component>
