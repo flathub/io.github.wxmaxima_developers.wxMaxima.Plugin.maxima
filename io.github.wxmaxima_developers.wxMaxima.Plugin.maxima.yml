@@ -1,7 +1,7 @@
 id: io.github.wxmaxima_developers.wxMaxima.Plugin.maxima
 runtime: io.github.wxmaxima_developers.wxMaxima
 runtime-version: stable
-sdk: org.freedesktop.Sdk//24.08
+sdk: org.freedesktop.Sdk//25.08
 build-extension: true
 separate-locales: false
 build-options:
