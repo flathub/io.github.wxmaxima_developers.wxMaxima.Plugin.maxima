@@ -42,7 +42,7 @@ modules:
         arch=$(uname -m)
         if [[ $arch == "x86_64" ]] ; then
            tar -xvjf sbcl_x86-64.tar.bz2
-           cd sbcl-2.5.6-x86-64-linux
+           cd sbcl-2.5.11-x86-64-linux
            INSTALL_ROOT=/app/plugins/maxima/ sh install.sh
         else
            ar x sbcl_arm64.deb
@@ -51,14 +51,14 @@ modules:
         fi
     sources:
       - type: file
-        url: http://prdownloads.sourceforge.net/sbcl/sbcl-2.5.6-x86-64-linux-binary.tar.bz2
-        sha256: 47bc3d01804507be957a98c1c3ccb0fcca82a0538411113b0ba65c0fdddbf030
+        url: http://prdownloads.sourceforge.net/sbcl/sbcl-2.5.11-x86-64-linux-binary.tar.bz2
+        sha256: 4f229e3e4106080820d095bb30ded0cd475a5c3202cbb8e580179d6b1cbaad2a
         dest-filename: sbcl_x86-64.tar.bz2
         only-arches:
           - x86_64
       - type: file
-        url: http://ftp.pl.debian.org/debian/pool/main/s/sbcl/sbcl_2.5.2-1_arm64.deb
-        sha256: 5d933768864e8adb88a46709651375ec682751d8b09205eb1f6a815d5f8ba3d3
+        url: http://ftp.pl.debian.org/debian/pool/main/s/sbcl/sbcl_2.5.11-1_arm64.deb
+        sha256: 587af5661ed0fc730beed2d923ad6a367d3a1d36d9d3a5b2dd227b1db57cf7fb
         dest-filename: sbcl_arm64.deb
         only-arches:
           - aarch64
@@ -72,8 +72,8 @@ modules:
       - ln -s -r /app/plugins/maxima/share/info /app/plugins/maxima/
     sources:
       - type: archive
-        url: https://prdownloads.sourceforge.net/maxima/Maxima-source/5.48.1-source/maxima-5.48.1.tar.gz
-        sha256: b0916b5fb37b6eeaae400083175e68e28f80b9a1ab580c106a05448cf1c496b2
+        url: https://prdownloads.sourceforge.net/maxima/Maxima-source/5.49.0-source/maxima-5.49.0.tar.gz
+        sha256: 6d401a4aa307cd3a5a9cadca4fa96c4ef0e24ff95a18bb6a8f803e3d2114adee
       - type: file
         path: io.github.wxmaxima_developers.wxMaxima.Plugin.maxima.metainfo.xml
         
