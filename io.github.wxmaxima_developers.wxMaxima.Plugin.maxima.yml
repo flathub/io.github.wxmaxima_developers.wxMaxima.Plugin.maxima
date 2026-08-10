@@ -36,32 +36,12 @@ modules:
         sha256: 76fb852b2f167592fe8b41aa6549ce4e486dbf3b259a269646600e3894517c76
   - name: sbcl
     buildsystem: simple
-    no-autogen: true
     build-commands:
-      - |
-        arch=$(uname -m)
-        if [[ $arch == "x86_64" ]] ; then
-           tar -xvjf sbcl_x86-64.tar.bz2
-           cd sbcl-2.5.11-x86-64-linux
-           INSTALL_ROOT=/app/plugins/maxima/ sh install.sh
-        else
-           ar x sbcl_arm64.deb
-           tar -xJf data.tar.xz
-           cp -ru ./usr/* /app/plugins/maxima/
-        fi
+      - sh make.sh --prefix=/app/plugins/maxima --dynamic-space-size=8Gb
     sources:
-      - type: file
-        url: http://prdownloads.sourceforge.net/sbcl/sbcl-2.5.11-x86-64-linux-binary.tar.bz2
-        sha256: 4f229e3e4106080820d095bb30ded0cd475a5c3202cbb8e580179d6b1cbaad2a
-        dest-filename: sbcl_x86-64.tar.bz2
-        only-arches:
-          - x86_64
-      - type: file
-        url: http://ftp.pl.debian.org/debian/pool/main/s/sbcl/sbcl_2.5.11-1_arm64.deb
-        sha256: 587af5661ed0fc730beed2d923ad6a367d3a1d36d9d3a5b2dd227b1db57cf7fb
-        dest-filename: sbcl_arm64.deb
-        only-arches:
-          - aarch64
+      - type: archive
+        url: http://prdownloads.sourceforge.net/sbcl/sbcl-2.6.7-source.tar.bz2
+        sha256: 1ebdc35c9dc8e271b8cd1ac44965e00bf255f9c0221650fcb77f0fb34c2d3ade
   - name: maxima
     buildsystem: autotools
     no-autogen: true
