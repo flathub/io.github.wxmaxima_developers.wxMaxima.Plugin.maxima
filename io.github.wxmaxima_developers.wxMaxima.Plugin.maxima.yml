@@ -4,9 +4,16 @@ runtime-version: stable
 sdk: org.freedesktop.Sdk//25.08
 build-extension: true
 separate-locales: false
+
+add-build-extensions:
+  io.github.wxmaxima_developers.wxMaxima.Plugin.maxima:
+    remove-after-build: true
+    version: 'stable'
+    directory: sbcl-tem
+    
 build-options:
   prefix: "/app/plugins/maxima"
-  prepend-path: "/app/plugins/maxima/bin"
+  prepend-path: "/app/plugins/maxima/bin:/app/plugins/maxima/sbcl-tem/bin"
   append-ld-library-path: "/app/plugins/maxima/lib:/app/plugins/maxima/lib64"
   append-pkg-config-path: "/app/plugins/maxima/lib/pkgconfig:/app/plugins/maxima/lib64/pkgconfig"
   ldflags: "-L/app/plugins/maxima/lib -L/app/plugins/maxima/lib64"
